@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>男生</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/class_list.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="book_list.html">玄幻</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="book_list.html">奇幻</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">武侠</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">仙侠</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">都市</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">现实</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">历史</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">军事</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">游戏</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">体育</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">科幻</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">灵异</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">二次元</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="">短篇</a>
+				</li>
+			</ul>
+		</div>
+		<div class="mui-bar-footer">
+
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+
+			mui.plusReady(function() {
+				mui(".mui-table-view").on("tap", ".mui-table-view-cell a", function(e) {
+					plus.webview.open('book_list.html', 'new', {}, 'slide-in-right', 200);
+				});
+
+			});
+			mui.back = function() {
+				var _self = plus.webview.currentWebview();
+				_self.close("auto");
+			}
+		</script>
+	</body>
+
+</html>

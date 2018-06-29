@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" type="text/css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">
+		    	<a class="mui-icon mui-icon-search" href="html/search.html">请输入内容</a>
+		    </h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile" data-wid="girl.html">
+							女生
+						</a>
+						<a class="mui-control-item" href="#item2mobile" data-wid="boy.html">
+							男生
+						</a>
+						<a class="mui-control-item" href="#item3mobile" data-wid="cartoon.html">
+							漫画
+						</a>
+						<a class="mui-control-item" href="#item4mobile" data-wid="other.html">
+							其它
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/util.js"></script>
+		<script src="js/webviewGroup.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function() {
+					mui.init({
+						swipeBack: true //启用右滑关闭功能
+					});
+							
+					mui.plusReady(function() {
+
+							// 创建子webview窗口 并初始化
+							var aniShow = {};
+							util.initSubpage(aniShow);
+							var nview = plus.nativeObj.View.getViewById('tabBar'),
+								activePage = plus.webview.currentWebview(),
+								targetPage,
+								subpages = util.options.subpages,
+								pageW = window.innerWidth,
+								currIndex = 0;
+
+							/**
+							 * 根据判断view控件点击位置判断切换的tab
+							 */
+							nview.addEventListener('click', function(e) {
+									var clientX = e.clientX;
+									if(clientX > 0 && clientX <= parseInt(pageW * 0.33)) {
+										currIndex = 0;
+									} else if(clientX > parseInt(pageW * 0.33) && clientX <= parseInt(pageW * 0.67)) {
+										currIndex = 1;
+									} else {
+										currIndex = 2;
+									}
+									// 匹配对应tab窗口	
+									if(currIndex > 0) {
+										targetPage = plus.webview.getWebviewById(subpages[currIndex - 1]);
+									} else {
+										targetPage = plus.webview.currentWebview();
+									}
+
+									if(targetPage == activePage) {
+										return;
+									}
+
+									if(currIndex !== 3) {
+										//底部选项卡切换
+										util.toggleNview(currIndex);
+										// 子页面切换
+										util.changeSubpage(targetPage, activePage, aniShow);
+										//更新当前活跃的页面
+										activePage = targetPage;
+									}
+							});
+					});
+			})();
+
+			mui.init();
+
+			mui.plusReady(function() {
+				var _self = plus.webview.currentWebview();
+				var group = new webviewGroup(_self.id, {
+					items: [{
+						id: "girl.html",
+						url: "html/class_list.html",
+						extras: {}
+						
+					}, {
+						id: "boy.html",
+						url: "html/class_list.html",
+						extras: {}
+					}, {
+						id: "cartoon.html",
+						url: "html/class_list.html",
+						extras: {}
+					}, {
+						id: "other.html",
+						url: "html/class_list.html",
+						extras: {}
+					}],
+					onChange: function(obj) {
+						var c = document.querySelector(".mui-control-item.mui-active");
+						if(c) {
+							c.classList.remove("mui-active");
+						}
+						var target = document.querySelector(".mui-scroll .mui-control-item:nth-child(" + (parseInt(obj.index) + 1) + ")");
+						target.classList.add("mui-active");
+						if(target.scrollIntoView) {
+							target.scrollIntoView();
+						}
+					}
+				});
+				mui(".mui-scroll").on("tap", ".mui-control-item", function(e) {
+					var wid = this.getAttribute("data-wid");
+					group.switchTab(wid);
+				});
+				mui(".mui-bar").on("tap", ".mui-icon-search", function(e) {
+					plus.webview.open('html/search.html', 'new', {}, 'slide-in-right', 200);
+				});
+
+			});
+			mui.back = function() {
+				var _self = plus.webview.currentWebview();
+				_self.close("auto");
+			}
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人资料设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个人资料设置</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<img> 修改头像
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="edit_nick.html" data-id="edit_nick">昵称 ：羞羞小猫猫</a>
+				</li>
+				<li class="mui-table-view-cell">
+					手机号 ：18712345678
+				</li>
+				<li class="mui-table-view-cell">
+
+					书币：19999个
+
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="forget_mm.html " data-id="forget_mm">
+						修改密码
+					</a>
+				</li>
+			</ul>
+
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-block">退出登录</button>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				mui(".mui-table-view").on("tap", ".mui-table-view-cell a", function(e) {
+					var a=this.getAttribute("data-id");
+					plus.webview.open(a+'.html', 'new', {}, 'slide-in-right', 200);
+				});
+
+			});
+			mui.back = function() {
+				var _self = plus.webview.currentWebview();
+				_self.close("auto");
+			}
+		</script>
+	</body>
+
+</html>
