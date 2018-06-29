@@ -1,0 +1,41 @@
+html {
+	max-width: 750px;
+	margin: auto;
+}
+
+.mui-bar {
+	background: rgb(186, 85, 211);
+	-webkit-box-shadow: 0 0 0 transparent;
+	box-shadow: 0 0 0 transparent;
+}
+
+.mui-bar .mui-title {
+	left: 0;
+	right: 0;
+}
+
+.mui-bar .mui-title a.mui-icon {
+	display: block;
+	margin: 12px auto 0;
+	width: 90%;
+	height: 24px;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, .4);
+	text-align: left;
+	line-height: 24px;
+	font-size: 14px;
+	text-indent: 12px;
+	color: #FFFFFF;
+}
+
+.mui-slider-indicator.mui-segmented-control{
+	background-color: #FFF;
+}
+
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+	min-width: 100%;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+	width: 24%;
+}

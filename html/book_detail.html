@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/book_detail.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"></h1> 分享
+		</header>
+		<div class="mui-content">
+			<div class="">
+				<div class="mui-left"><img src="" /></div>
+				<div class="mui-right">
+					<h3>书名</h3>
+					<p>作者</p>
+					<p>字数</p>
+					<p>分类 评分</p>
+				</div>
+				<div class="mui-card">
+					这里是书籍简介，两耳不闻窗外事，一心只读圣贤书
+				</div>
+			</div>
+			<div><a href="">目录</a>   更新至<a href="">788章  手把手教你装逼</a></div>
+			<div class="mui-card">
+				<div class="mui-card-header">
+					评论（12345） <a class="review_enter" href="book_review.html"> 更多评论</a>
+				</div>
+				<div class="mui-card-content">
+					<p>黄小明    2018-8-9 </p>
+					<p>我老婆在这部书改变的电视剧里演主角，虽然痛苦万分，但是面无表情</p>
+				</div>
+				
+			</div>
+			<div class="mui-card">
+				<div class="">
+					这里就是文章的正文开始的地方啦，我一般在这个地方看到的是同类型书籍推荐，或者是同作者其他书推荐，但是这次nc产品决定塞一段正文，天，除了H和r文，哪类书能靠几行字吸引读者的？除了H和r文，哪类书能靠几行字吸引读者的？除了H和r文，哪类书能靠几行字吸引读者的？除了H和r文，哪类书能靠几行字吸引读者的？除了H和r文，哪类书能靠几行字吸引读者的？除了H和r文，哪类书能靠几行字吸引读者的？除了H和r文，哪类书能靠几行字吸引读者的？除了H和r文，哪类书能靠几行字吸引读者的？
+				</div>
+			</div>
+		</div>
+		<div class="mui-bar-footer">
+			<a>+书架</a>
+			<a>开始阅读</a>
+			<a>下载</a>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				mui(".mui-card").on("tap", ".review_enter", function(e) {
+					plus.webview.open('book_review.html', 'new', {}, 'slide-in-right', 200);
+				});
+
+			});
+			mui.back = function() {
+				var _self = plus.webview.currentWebview();
+				_self.close("auto");
+			}
+		</script>
+	</body>
+
+</html>

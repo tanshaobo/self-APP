@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">阅读记录</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<div class="mui-card-header recent">
+					最近阅读
+					<a href="">更多</a>
+				</div>
+				<div class="mui-card-content">
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon mui-icon-home"></span>
+								<div class="mui-media-body">Home</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+								<div class="mui-media-body">Email</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon mui-icon-chatbubble"></span>
+								<div class="mui-media-body">Chat</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-header end">
+					阅读完毕
+					<a href="">更多</a>
+				</div>
+				<div class="mui-card-content">
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon mui-icon-home"></span>
+								<div class="mui-media-body">Home</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+								<div class="mui-media-body">Email</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon mui-icon-chatbubble"></span>
+								<div class="mui-media-body">Chat</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				mui(".mui-card").on("tap", ".recent a", function(e) {
+					plus.webview.open('record_detail.html', 'new', {}, 'slide-in-right', 200);
+				});
+				mui(".mui-card").on("tap", ".end a", function(e) {
+					plus.webview.open('record_detail.html', 'new', {}, 'slide-in-right', 200);
+				});
+			});
+			mui.back = function() {
+				var _self = plus.webview.currentWebview();
+				_self.close("auto");
+			}
+		</script>
+	</body>
+
+</html>

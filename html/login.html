@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>男生</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">登录</h1>
+			<a href="register.html" class="register" style="float: right;">注册</a>
+		</header>
+		<div class="mui-content">
+			<img src="../images/logo.png" />
+			<form action="" method="post">
+				<div class="mui-input-row">
+					<label>Input</label>
+					<input type="text" class="mui-input-clear" placeholder="带清除按钮的输入框">
+				</div>
+				<div class="mui-input-row mui-password">
+					<input type="password" class="mui-input-password">
+				</div>
+				<input type="submit" value="登录" />
+			</form>
+			<a href="forget_mm.html" class="forget_mm">忘记密码？</a>
+			
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				mui(".mui-bar-nav").on("tap", ".register", function(e) {
+					plus.webview.open('register.html', 'new', {}, 'slide-in-right', 200);
+				});
+				mui(".mui-content").on("tap", ".forget_mm", function(e) {
+					plus.webview.open('forget_mm.html', 'new', {}, 'slide-in-right', 200);
+				});
+
+			});
+			mui.back = function() {
+				var _self = plus.webview.currentWebview();
+				_self.close("auto");
+			}
+
+		</script>
+	</body>
+
+</html>

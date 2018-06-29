@@ -1,0 +1,14 @@
+.mui-content>.mui-table-view:first-child{
+	margin-top: 0;
+	}
+	.mui-pull-left{
+		width:100px;
+		height: 124px;
+		margin-right: 10px;
+	}
+	.mui-table-view-cell p{
+		white-space: normal;
+	}
+.mui-bar-footer{
+	min-height: 48px;
+	}
