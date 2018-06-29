@@ -1,6 +1,6 @@
 var util = {
 	options: {
-		ACTIVE_COLOR: "#007aff",
+		ACTIVE_COLOR: "#9400D3",
 		NORMAL_COLOR: "#000",
 		subpages: ["html/bookshelf.html", "html/my.html"]
 	},

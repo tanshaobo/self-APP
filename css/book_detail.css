@@ -1,0 +1,76 @@
+html {
+	max-width: 750px;
+	margin: auto;
+}
+
+.mui-bar {
+	background: rgb(186, 85, 211);
+	-webkit-box-shadow: 0 0 0 transparent;
+	box-shadow: 0 0 0 transparent;
+}
+
+.mui-bar .mui-title {
+	left: 0;
+	right: 0;
+}
+
+.mui-bar .mui-title a.mui-icon {
+	display: block;
+	margin: 12px auto 0;
+	width: 90%;
+	height: 24px;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, .4);
+	text-align: left;
+	line-height: 24px;
+	font-size: 14px;
+	text-indent: 12px;
+	color: #FFFFFF;
+}
+
+.mui-info{
+	position: relative;
+	margin: 10px;
+	}
+
+.mui-left {
+	width: 100px;
+	height: 124px;
+	position: absolute;
+}
+
+.mui-left img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.mui-right{
+	padding-left: 110px;
+}
+
+.mui-right h3{font-size: 18px;font-weight: normal;margin: 10px 0;}
+.mui-right p{
+	line-height: 2;
+	color:#333;
+	}
+	.mui-right span{
+		margin-left: 50px;
+		color:#9400D3;}
+.mui-info .mui-card{
+	margin: 10px 0;
+	padding: 0 10px;
+}
+
+.index-info{background: #FFF;line-height: 2;margin: 0 10px;text-indent: 10px;}
+.review_enter{font-size: 16px;padding-right: 16px;position: relative;}
+.review_enter:before{position: absolute;right: -4px;top:-4px;font-size: 24px;}
+.mui-card-content{
+	padding: 0 15px;
+}
+.mui-card-content p{color:#333333;margin: 10px 0;}
+.mui-card-content p span{float: right;}
+.book-intro{margin-bottom:60px;}
+.mui-bar-footer{position: fixed;bottom: 0;height: 50px;font-size: 0;width: 100%;text-align: center;background: #9400D3;}
+.mui-bar-footer a{display: inline-block;width: 33.33%;font-size: 16px;color:#FFF;line-height: 50px;border-right: 1px solid #FFF;}
+.mui-bar-footer a:last-child{border: none;}
