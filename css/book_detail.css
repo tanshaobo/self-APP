@@ -37,7 +37,6 @@ html {
 	width: 100px;
 	height: 124px;
 	position: absolute;
-}
 
 .mui-left img {
 	display: block;
@@ -74,3 +73,6 @@ html {
 .mui-bar-footer{position: fixed;bottom: 0;height: 50px;font-size: 0;width: 100%;text-align: center;background: #9400D3;}
 .mui-bar-footer a{display: inline-block;width: 33.33%;font-size: 16px;color:#FFF;line-height: 50px;border-right: 1px solid #FFF;}
 .mui-bar-footer a:last-child{border: none;}
+=======
+}
+>>>>>>> fa4bd8c65e5ef4163fbc358caa53f0d07ebc5aaf
